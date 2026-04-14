@@ -1,0 +1,54 @@
+.Dd 2026-01-03
+.Dt SENDSMS 1
+.Os
+.Sh NAME
+.Nm sendsms - Send a SMS via a Huawei HTTP enabled dongle
+.Sh SYNOPSIS
+.Nm sendsms 
+.Fl t Ar toaddress,n2,...
+.Op Fl b Ar baseurl
+.Ar - 
+.Sh DESCRIPTION
+.Pp
+.Nm
+facilitates the sending of sms (text) messages to a Huawei USB dongle via the 
+embedded HTTP API.  This allows the dongle to operate in the default router mode
+with a network IP address, and avoid reconfiguring into an AT mode for 
+traditional clients.
+.Pp
+Message body is taken from standard input, with a blank line to indicate the end
+of the message.  The message body can also be supplied by a pipe to the program.
+.Pp
+The destination number must be provided with the
+.Cm Fl t
+flag, separated by a comma and with no whitespace.  These numbers should be in
+full international format (e.g. +441234567890) for best compatibility.
+.Pp
+The default HTTP endpoint is http://192.168.8.1/api/ but can be overridden with 
+the 
+.Cm Fl b
+flag, providing the full HTTP URL that the API is based on.
+.Pp
+This application is developed in .NET and may have been distributed as a
+standalone compiled executable, or in a framework-dependent configuration.
+.Pp
+Known compatible dongles:
+.Bl -bullet
+.It
+E3372-325
+.El
+
+.Sh SEE ALSO
+.Xr smsmonitor 1
+
+.Sh AUTHOR
+.An "Alastair Grant" Aq http://www.aligrant.com/
+
+.Sh COPYRIGHT
+(C) 2025, Alastair Grant
+
+.Sh LICENCE
+This application is disributed under the GNU Affero General Public License
+.Pp
+See the LICENSE.txt file for full body. See THIRDPARTY-NOTICES.TXT for LICENCE
+conditions for upstream libraries.

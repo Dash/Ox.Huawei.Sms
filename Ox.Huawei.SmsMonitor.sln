@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11205.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ox.Huawei.Sms", "Ox.Huawei.Sms\Ox.Huawei.Sms.csproj", "{83A426F4-1E3A-47DA-9AAF-E9CC027B6596}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31154708-E4C7-4FE1-9303-DF0E8D510E20}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		.runsettings = .runsettings
+		AGENTS.md = AGENTS.md
+		CLA.md = CLA.md
+		LICENSE.txt = LICENSE.txt
+		.github\pull_request_template.md = .github\pull_request_template.md
+		README.md = README.md
+		THIRDPARTY-NOTICES.TXT = THIRDPARTY-NOTICES.TXT
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ox.Huawei.Sms.Monitor", "Ox.Huawei.Sms.Monitor\Ox.Huawei.Sms.Monitor.csproj", "{08593A07-3011-4197-B426-49B226F34FE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ox.Huawei.Sms.Monitor.Tests", "Ox.Huawei.Sms.Monitor.Tests\Ox.Huawei.Sms.Monitor.Tests.csproj", "{68810AD0-F049-494D-AFC2-E2BD760E4C3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ox.Huawei.Sms.SendCli", "Ox.Huawei.Sms.SendCli\Ox.Huawei.Sms.SendCli.csproj", "{0DA82884-D0CF-4CA4-B0BE-A788168EE47A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{0CE390EE-774C-40BB-80EA-17E4C6FA4B5A}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		rpm\Ox.Huawei.Sms.spec = rpm\Ox.Huawei.Sms.spec
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83A426F4-1E3A-47DA-9AAF-E9CC027B6596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83A426F4-1E3A-47DA-9AAF-E9CC027B6596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83A426F4-1E3A-47DA-9AAF-E9CC027B6596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83A426F4-1E3A-47DA-9AAF-E9CC027B6596}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08593A07-3011-4197-B426-49B226F34FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08593A07-3011-4197-B426-49B226F34FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08593A07-3011-4197-B426-49B226F34FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08593A07-3011-4197-B426-49B226F34FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68810AD0-F049-494D-AFC2-E2BD760E4C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68810AD0-F049-494D-AFC2-E2BD760E4C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68810AD0-F049-494D-AFC2-E2BD760E4C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA82884-D0CF-4CA4-B0BE-A788168EE47A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA82884-D0CF-4CA4-B0BE-A788168EE47A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA82884-D0CF-4CA4-B0BE-A788168EE47A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA82884-D0CF-4CA4-B0BE-A788168EE47A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {030FD849-2417-4D19-8473-C604155CE35C}
+	EndGlobalSection
+EndGlobal

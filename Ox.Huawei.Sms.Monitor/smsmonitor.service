@@ -1,0 +1,61 @@
+[Unit]
+Description=Huawei SMS Monitor Service
+After=network.target
+StartLimitBurst=3
+StartLimitIntervalSec=200
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/smsmonitor
+Restart=on-failure
+RestartSec=60
+WorkingDirectory=%d
+
+## .NET Tuning
+## .NET manages memory automatically and is aware of the system so will happily
+## consume available memory and release when the OS wants it. This setting
+## tells the runtime where the upper limit is and makes it behave more
+## politely in a virtualised environment by keeping it under constant pressure
+## 40MB is an unscientific value that seems excessively high for this process
+Environment="DOTNET_GCHeapHardLimit=0x2800000"
+Environment="DOTNET_GCConserveMemory=5"
+Environment="DOTNET_gcServer=1"
+
+## Sandboxing
+## These settings remove system functionality that is not required for running 
+## this program, making it less vulnerable to as an attack vector.
+
+DynamicUser=yes
+LoadCredential=smsmonitor.json:/etc/smsmonitor.json
+ExecPaths=/usr/sbin/smsmonitor /etc/smsmonitor.json
+ReadOnlyPaths=/
+ProtectSystem=strict
+ProtectHome=true
+PrivateUsers=true
+RemoveIPC=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+PrivateDevices=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectProc=invisible
+ProcSubset=pid
+NoNewPrivileges=true
+ProtectClock=true
+SystemCallArchitectures=native
+RestrictNamespaces=true
+RestrictSUIDSGID=true
+LockPersonality=true
+RestrictRealtime=true
+ProtectHostname=true
+RestrictAddressFamilies=AF_INET AF_INET6
+PrivateTmp=true
+SocketBindDeny=any
+UMask=0077
+KeyringMode=private
+CapabilityBoundingSet=
+SystemCallFilter=@system-service
+SystemCallFilter=~@chown @keyring @resources @setuid @privileged
+
+[Install]
+WantedBy=multi-user.target

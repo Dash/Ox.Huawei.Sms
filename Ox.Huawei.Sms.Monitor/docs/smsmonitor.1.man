@@ -1,0 +1,47 @@
+.Dd 2026-01-03
+.Dt SMSMONITOR 1
+.Os
+.Sh NAME
+.Nm smsmonitor - Send a SMS via a Huawei HTTP enabled dongle
+.Sh SYNOPSIS
+.Nm smsmonitor
+.Sh DESCRIPTION
+.Pp
+.Nm
+is a daemon process for monitoring a Huawei USB dongle via the embedded HTTP 
+API.  This allows the dongle to operate in the default router mode with a 
+network IP address, and avoid reconfiguring into an AT mode for traditional
+clients.
+.Pp
+Upon receipt of a message, the message will be forwarded to the configured
+dispatch endpoints (currently, SMTP and MQTT are supported), and the message
+marked as read.
+.Pp
+The default HTTP endpoint is http://192.168.8.1/api/ but can be overridden with 
+the 
+.Cm Fl b
+flag, providing the full HTTP URL that the API is based on.
+.Pp
+This application is developed in .NET and may have been distributed as a
+standalone compiled executable, or in a framework-dependent configuration.
+.Pp
+Known compatible dongles:
+.Bl -bullet
+.It
+E3372-325
+.El
+
+.Sh SEE ALSO
+.Xr smsmonitor 1
+
+.Sh AUTHOR
+.An "Alastair Grant" Aq http://www.aligrant.com/
+
+.Sh COPYRIGHT
+(C) 2025, Alastair Grant
+
+.Sh LICENCE
+This application is disributed under the GNU Affero General Public License
+.Pp
+See the LICENSE.txt file for full body. See THIRDPARTY-NOTICES.TXT for LICENCE
+conditions for upstream libraries.

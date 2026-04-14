@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<PublishAot>true</PublishAot>
+		<PublishTrimmed>true</PublishTrimmed>
+		<SelfContained>true</SelfContained>
+		<PublishSingleFile>true</PublishSingleFile>
+		<UserSecretsId>dotnet-Ox.Huawei.Sms.Mqtt-f6210cfc-ea50-434d-b3c0-4d5fe5c75211</UserSecretsId>
+		<RuntimeIdentifiers>linux-x64;win-x64;osx-x64</RuntimeIdentifiers>
+		<EnableSdkContainerDebugging>True</EnableSdkContainerDebugging>
+		<IsPublishable>True</IsPublishable>
+		<EnableSdkContainerSupport>True</EnableSdkContainerSupport>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<EnableConfigurationBindingGenerator>true</EnableConfigurationBindingGenerator>
+		<AssemblyName>smsmonitor</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="10.*" />
+		<!--
+		Not currently working with the common root element name
+		<PackageReference Include="Microsoft.XmlSerializer.Generator" Version="10.*" PrivateAssets="all" />
+		-->
+		<PackageReference Include="MQTTnet" Version="5.1.0.1559" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Ox.Huawei.Sms\Ox.Huawei.Sms.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+			<None Include="..\THIRDPARTY-NOTICES.TXT">
+				<Link>docs\THIRDPARTY-NOTICES.TXT</Link>
+				<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+				<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+			</None>
+			<None Include="..\LICENSE.txt">
+				<Link>docs\LICENSE.txt</Link>
+				<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+				<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+			</None>
+			<None Update="docs\INSTALL.txt">
+			  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			</None>
+			<None Update="docs\smsmonitor.1.man">
+				<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+				<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+			</None>
+	  <None Update="smsmonitor.service">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<TrimmerRootDescriptor Include="linker.xml" />
+	</ItemGroup>
+</Project>

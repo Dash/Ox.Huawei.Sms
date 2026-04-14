@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "Ox.Huawei.Sms.Mqtt": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development",
+        "DOTNET_GCHeapHardLimit": "0x2800000"
+      },
+      "dotnetRunMessages": true
+    },
+    "Container (.NET SDK)": {
+      "commandName": "SdkContainer"
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json"
+}

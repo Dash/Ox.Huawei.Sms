@@ -1,0 +1,37 @@
+smsmonitor
+
+CONFIGURATION
+=============
+Edit the appsettings.json file with an appropriate text editor.  Ensure that the
+file adheres to JSON formatting to avoid errors on loading.
+
+Device.BaseAddress: the HTTP URL for the dongle's API
+Monitor.Sms.Interval: polling frequency in seconds for new messages
+Monitor.Device.Interval: health check frequency in seconds
+Dispatchers.SmtpDispatcher.Host: SMTP host name for email notifications
+Dispatchers.SmptDispatcher.Port: SMTP server port for email notifications
+Dispatchers.SmtpDispatcher.ToAddress: Email address to send notifications to
+Dispatchers.SmtpDispatcher.FromAddress: From email address to send from
+Dispatchers.MqttDispatcher.Host: MQTT broker hostname
+Dispatchers.MqttDispatcher.Port: MQTT broker TCP port
+Dispatchers.MqttDispatcher.TopicName: Parent/top MQTT Topic to publish to
+Dispatchers.MqttDispatcher.Username: MQTT broker username
+Dispatchers.MqttDispatcher.Password: MQTT broker password
+
+If you do not wish to use a dispatcher, remove the entire node from the JSON
+file for that dispatcher to prevent it from being configured on startup.
+
+WINDOWS
+=======
+* Configure the appsettings.json file to taste
+* Run the executable
+
+LINUX
+=====
+
+* Copy the smsmonitor program to an appropriate location (/usr/local/bin)
+* Copy the appsettings.json file to /etc/smsmonitor.json, and configure to taste
+* Copy the smsmonitor.service systemd unit descriptor to /etc/systemd/system/ 
+  or create a symbolic link
+* Refresh systemd: systemctl daemon-reload
+* Start the service: systemctl start smsmonitor

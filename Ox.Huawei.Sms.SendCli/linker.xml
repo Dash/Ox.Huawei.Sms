@@ -1,0 +1,6 @@
+<linker>
+	<assembly fullname="Ox.Huawei.Sms">
+		<type fullname="Ox.Huawei.Sms.Messages.*" preserve="all" />
+	</assembly>
+</linker>
+
