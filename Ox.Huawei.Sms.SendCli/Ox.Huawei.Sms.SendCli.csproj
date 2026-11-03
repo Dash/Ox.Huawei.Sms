@@ -43,6 +43,7 @@
 
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.DotNet.ILCompiler" Version="10.0.14" />
 		<TrimmerRootDescriptor Include="linker.xml" />
 	</ItemGroup>
 </Project>
